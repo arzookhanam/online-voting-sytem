@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cast Your Vote</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .vote-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .party-option {
+      margin: 15px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .party-option input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.3);
+    }
+
+    .party-option label {
+      color: #444;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background-color: #4facfe;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00c6ff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="VoteServlet" method="post" class="vote-container">
+    <h2>Cast Your Vote</h2>
+
+    <div class="party-option">
+      <input type="radio" id="party1" name="party" value="1" required>
+      <label for="party1">BJP</label>
+    </div>
+
+    <div class="party-option">
+      <input type="radio" id="party2" name="party" value="2">
+      <label for="party2">CONGRESS</label>
+    </div>
+
+    <div class="party-option">
+      <input type="radio" id="party3" name="party" value="3">
+      <label for="party3">AAP</label>
+    </div>
+
+    <input type="submit" value="Vote">
+  </form>
+</body>
+</html>
